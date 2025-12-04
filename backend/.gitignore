@@ -1,0 +1,17 @@
+node_modules
+dist
+dist-ssr
+coverage
+*.log
+.pnpm-debug.log*
+
+# Environment files (keep samples tracked)
+.env
+.env.*
+!.env.example
+
+# Prisma artifacts & local databases
+prisma/dev.db
+prisma/test.db
+prisma/generated/
+generated/prisma
