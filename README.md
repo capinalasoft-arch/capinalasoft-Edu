@@ -2,6 +2,8 @@
 
 MVP de **sistema de gestão escolar Android** consumindo o **banco de dados do Gibbon** através de uma **REST API**.
 
+Versão alvo do Gibbon: **v31**.
+
 ## Estrutura
 
 - `api/`: REST API (FastAPI) conectando no MySQL do Gibbon
@@ -19,17 +21,18 @@ MVP de **sistema de gestão escolar Android** consumindo o **banco de dados do G
 2) Instale dependências e rode:
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r api/requirements.txt
 
 # rode a API
-uvicorn api.app.main:app --reload --host 0.0.0.0 --port 8000
+python3 -m uvicorn app.main:app --reload --app-dir api --host 0.0.0.0 --port 8000
 ```
 
 ### Endpoints
 
 - `GET /health` (sem autenticação)
+- `GET /gibbon/info` (requer header `X-API-Key`)
 - `GET /students` (requer header `X-API-Key`)
 - `GET /staff` (requer header `X-API-Key`)
 - `GET /classes` (placeholder)

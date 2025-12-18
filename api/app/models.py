@@ -22,3 +22,8 @@ class Staff(BaseModel):
 class Health(BaseModel):
     ok: bool
     db: bool
+    gibbonVersion: str | None = None
+
+
+class GibbonInfo(BaseModel):
+    version: str | None = None
